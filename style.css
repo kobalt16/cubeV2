@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(1, 6, 26);
+}
+.container {
+    position: relative;
+    margin: 400px auto;
+    width: 500px;
+    height: 500px;
+    color: aliceblue;
+    perspective: 1000px;
+}
+.cube {
+    width: inherit;
+    height: inherit;
+    transform-style: preserve-3d;
+    transform: rotate3d(1, 1, 1, 45deg); 
+    transform: rotateY(45deg);
+    animation: cubemove linear 7s infinite; 
+}
+@keyframes cubemove {
+    0% {
+        transform: rotateZ(45deg) rotateY(0deg);
+    }
+    25% {
+        transform: rotateY(90deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    75% {
+        transform: rotateY(270deg);
+    }
+    100% {
+        transform: rotateZ(45deg) rotateY(360deg);
+    }
+
+}
+
+
+.side {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 55px rgb(177, 253, 47);
+    text-transform: uppercase;
+    border: 10px solid #fff;
+    font: normal 400px Arial;
+    line-height: 600px;
+    box-shadow: 1px 1px 55px rgb(177, 253, 47);
+    /* backface-visibility: hidden; */
+    /* border-radius: 50%; */
+
+}
+.front {
+    /* border-color: rgb(148, 0, 0); */
+    /* background-color: brown; */
+    /* opacity: .5; */
+    /* color: rgb(148, 1, 1); */
+    transform: translateZ(300px);
+}
+.back {
+    /* border-color: rgb(0, 0, 148); */
+    /* background-color: rgb(0, 0, 148); */
+    /* opacity: .5; */
+    /* color: rgb(0, 0, 148); */
+    transform: rotateY(180deg) translateZ(300px);
+}
+.right {
+    /* border-color: rgb(0, 148, 7); */
+    /* background-color: rgb(0, 148, 7); */
+    /* opacity: .5; */
+    /* color: rgb(0, 148, 7); */
+    transform: rotateY(90deg) translateZ(300px);
+}
+.left {
+    /* border-color: rgb(221, 233, 55); */
+    /* background-color: rgb(221, 233, 55); */
+    /* opacity: .5; */
+    /* color: rgb(221, 233, 55); */
+    transform: rotateY(-90deg) translateZ(300px);
+}
+.top {
+    /* border-color: rgb(148, 0, 131); */
+    /* background-color: rgb(148, 0, 131); */
+    /* opacity: .5; */
+    /* color: rgb(148, 0, 131); */
+    transform: rotateX(90deg) translateZ(300px);;
+}
+.bottom {
+    /* border-color: rgb(20, 2, 2); */
+    /* background-color: rgb(20, 2, 2); */
+    /* opacity: .5; */
+    /* color: rgb(255, 255, 255); */
+    transform: rotateX(-90deg) translateZ(300px);
+}
